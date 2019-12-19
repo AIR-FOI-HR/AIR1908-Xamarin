@@ -7,7 +7,6 @@ namespace database
 {
     public class MockData
     {
-        private static MyDatabase database;
         public static void writeAll()
         {
            
