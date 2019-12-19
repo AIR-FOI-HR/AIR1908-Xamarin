@@ -50,17 +50,26 @@ namespace webservice
             }
         }
 
-        private void handleDiscounts(MyWebServiceResponse responseStores)
+        private void handleStores(MyWebServiceResponse responseStores)
         {
             Store[] storeItems = JsonConvert.DeserializeObject<Store[]>(responseStores.Items);
+            if (mMyWebServiceHandler != null)
+            {
+                mMyWebServiceHandler.onDataArrived(new List<Store>(storeItems), true, responseStores.TimeStamp);
+            }
         }
 
-        private void handleStores(MyWebServiceResponse responseDiscounts)
+        private void handleDiscounts(MyWebServiceResponse responseDiscounts)
         {
             Discount[] discountItems = JsonConvert.DeserializeObject<Discount[]>(responseDiscounts.Items, new JsonSerializerSettings 
             { 
                 DateFormatString = "yyyy-MM-dd"
             });
+
+            if (mMyWebServiceHandler != null)
+            {
+                mMyWebServiceHandler.onDataArrived(new List<Discount>(discountItems), true, responseDiscounts.TimeStamp);
+            }
         }
     }
 }
