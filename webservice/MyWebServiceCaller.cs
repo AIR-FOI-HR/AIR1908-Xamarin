@@ -4,7 +4,18 @@ using System.Text;
 
 namespace webservice
 {
-    class MyWebServiceCaller
+    public class MyWebServiceCaller
     {
+        private const String baseUrl = "http://cortex.foi.hr/mtl/courses/air/";
+
+        public MyWebServiceCaller()
+        {
+
+        }
+
+        public async void getAll(Dictionary<String, String>, Type entityType)
+        {
+
+        }
     }
 }
