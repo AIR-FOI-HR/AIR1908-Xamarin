@@ -12,10 +12,16 @@ namespace webservice
         private const String baseUrl = "http://cortex.foi.hr/mtl/courses/air/";
 
         private static MyWebService _api;
+        MyWebServiceHandler mMyWebServiceHandler;
 
         public MyWebServiceCaller()
         {
 
+        }
+
+        public MyWebServiceCaller(MyWebServiceHandler myWebServiceHandler)
+        {
+            this.mMyWebServiceHandler = myWebServiceHandler;
         }
 
         public async void getAll(Dictionary<String, String> method, Type entityType)
