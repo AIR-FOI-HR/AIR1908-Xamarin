@@ -15,7 +15,7 @@ namespace webservice
             }
             else if (typeof(T) == typeof(Discount))
             {
-                return new HandlerDiscounts();
+                return new DiscountsHandler();
             }
             else
                 return null;
