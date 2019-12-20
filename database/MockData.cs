@@ -15,7 +15,7 @@ namespace database
             store.ID = Database.DatabasePath.InsertStores(store).Result;
 
             Discount discount = new Discount();
-            discount.Name = "Popust 1";
+            discount.Name = "Popust 91";
             discount.Description = "Badjune ovo cu ti zapamtit";
             discount.storeId = store.ID;
 
@@ -23,8 +23,8 @@ namespace database
 
 
             Discount discount2 = new Discount();
-            discount2.Name = "Popust 2";
-            discount2.Description = "Badjune ovo cu ti necu zaboravit";
+            discount2.Name = "Popust 22";
+            discount2.Description = "Badjune ovo ti necu zaboravit";
             discount2.storeId = store.ID;
 
             Database.DatabasePath.InsertDiscounts(discount2);

@@ -11,6 +11,7 @@ using database;
 using Android.Views;
 using Android.Support.V7.RecyclerView.Extensions;
 using core;
+using DiscountLocator19.loaders;
 
 namespace DiscountLocator19
 {
@@ -21,8 +22,14 @@ namespace DiscountLocator19
         ListView listView;
 
         public void onDataLoaded(List<Store> stores, List<Discount> discounts)
-        { 
-            
+        {
+            var listItems = new List<String>();
+
+            listItems = discounts.Select(d => d.Name).ToList();
+
+            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, listItems);
+            listView.Adapter = listAdapter;
+
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -41,12 +48,16 @@ namespace DiscountLocator19
 
         private void onButtonClick()
         {
-            List<Discount> discounts = Database.DatabasePath.GetDiscounts().Result;
+            //List<Discount> discounts = Database.DatabasePath.GetDiscounts().Result;
 
-            List<String> names = discounts.Select(d => d.Name).ToList();
+            //List<String> names = discounts.Select(d => d.Name).ToList();
 
-            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, names);
-            listView.Adapter = listAdapter;
+            //ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, names);
+            //listView.Adapter = listAdapter;
+
+            DataLoader dataLoader = new WsDataLoader();
+            dataLoader.loadData(this);
+
         }
 
         private void mockData()

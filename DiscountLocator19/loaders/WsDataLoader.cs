@@ -26,7 +26,7 @@ namespace DiscountLocator19.loaders
             Dictionary<string, string> method = new Dictionary<string, string>();
             method.Add("method", "getAll");
             storesWs.getAll(method, typeof(Store));
-            discountsWs.getAll(method, typeof(Store));
+            discountsWs.getAll(method, typeof(Discount));
             
         }
 
