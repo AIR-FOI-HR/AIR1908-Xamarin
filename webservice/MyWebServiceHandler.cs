@@ -9,5 +9,9 @@ namespace webservice
         void onDataArrived(Object result, bool ok, long timestamp);
 
         bool hasDataArrived();
+
+        List<Object> haveStoresArrived();
+
+        List<Object> haveDiscountsArrived();
     }
 }

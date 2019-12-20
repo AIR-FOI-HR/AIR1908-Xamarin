@@ -55,7 +55,7 @@ namespace DiscountLocator19
             //ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, names);
             //listView.Adapter = listAdapter;
 
-            DataLoader dataLoader = new WsDataLoader();
+            DataLoader dataLoader = new DbDataLoader();
             dataLoader.loadData(this);
 
         }

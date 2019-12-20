@@ -38,7 +38,23 @@ namespace DiscountLocator19.loaders
         {
             if (storesHandler.hasDataArrived() && discountsHandler.hasDataArrived())
             {
-                mDataLoadedListener.onDataLoaded(database.Database.DatabasePath.GetStores().Result, database.Database.DatabasePath.GetDiscounts().Result);
+                var objektiDucana = storesHandler.haveStoresArrived();
+                var objektiPopusta = discountsHandler.haveDiscountsArrived();
+                List<Store> ducani = new List<Store>();
+                List<Discount> popusti = new List<Discount>();
+
+                foreach (Object item in objektiDucana)
+                {
+                    ducani.Add((Store) item);
+                }
+
+                foreach (Object item in objektiPopusta)
+                {
+                    popusti.Add((Discount)item);
+                }
+
+
+                mDataLoadedListener.onDataLoaded(ducani, popusti);
             }
         }
 
