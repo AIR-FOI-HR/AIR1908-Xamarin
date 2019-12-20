@@ -27,7 +27,6 @@ namespace DiscountLocator19.loaders
             method.Add("method", "getAll");
             storesWs.getAll(method, typeof(Store));
             discountsWs.getAll(method, typeof(Discount));
-            
         }
 
         MyWebServiceHandler storesHandler = MyWebServiceHandlerFactory.GetHandler<Store>();
@@ -52,7 +51,6 @@ namespace DiscountLocator19.loaders
                 {
                     popusti.Add((Discount)item);
                 }
-
 
                 mDataLoadedListener.onDataLoaded(ducani, popusti);
             }
