@@ -28,12 +28,11 @@ namespace DiscountLocator19.loaders
             storesWs.getAll(method, typeof(Store));
             discountsWs.getAll(method, typeof(Store));
 
-            MyWebServiceHandler storesHandler = null;
+            MyWebServiceHandler storesHandler = MyWebServiceHandlerFactory.GetHandler<Store>();
 
-            MyWebServiceHandler discountsHandler = null;
+            MyWebServiceHandler discountsHandler = MyWebServiceHandlerFactory.GetHandler<Discount>();
 
-            //Zasad još ne možemo pridružiti nikakvu vrijednost storesHandler i discountsHandler varijablama
-
+            
         }
     }
 }
