@@ -13,7 +13,7 @@ namespace core
 
         protected DataLoadedListener mDataLoadedListener;
 
-        public void loadData(DataLoadedListener dataLoadedListener)
+        public virtual void loadData(DataLoadedListener dataLoadedListener)
         {
             mDataLoadedListener = dataLoadedListener;
         }
