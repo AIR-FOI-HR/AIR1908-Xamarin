@@ -10,14 +10,21 @@ using System.Collections.Generic;
 using database;
 using Android.Views;
 using Android.Support.V7.RecyclerView.Extensions;
+using core;
 
 namespace DiscountLocator19
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : AppCompatActivity, DataLoadedListener
     {
         Button button;
         ListView listView;
+
+        public void onDataLoaded(List<Store> stores, List<Discount> discounts)
+        { 
+            
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
