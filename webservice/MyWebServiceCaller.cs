@@ -1,4 +1,5 @@
-﻿using database.Entities;
+﻿using core;
+using database.Entities;
 using Newtonsoft.Json;
 using Refit;
 using System;
@@ -13,15 +14,16 @@ namespace webservice
 
         private static MyWebService _api;
         MyWebServiceHandler mMyWebServiceHandler;
-
+        private IDataArrived dataArrived;
         public MyWebServiceCaller()
         {
 
         }
 
-        public MyWebServiceCaller(MyWebServiceHandler myWebServiceHandler)
+        public MyWebServiceCaller(MyWebServiceHandler myWebServiceHandler, IDataArrived dataArrived)
         {
             this.mMyWebServiceHandler = myWebServiceHandler;
+            this.dataArrived = dataArrived;
         }
 
         public async void getAll(Dictionary<String, String> method, Type entityType)
@@ -56,6 +58,7 @@ namespace webservice
             if (mMyWebServiceHandler != null)
             {
                 mMyWebServiceHandler.onDataArrived(new List<Store>(storeItems), true, responseStores.TimeStamp);
+                dataArrived.DataArrived();
             }
         }
 
@@ -69,6 +72,7 @@ namespace webservice
             if (mMyWebServiceHandler != null)
             {
                 mMyWebServiceHandler.onDataArrived(new List<Discount>(discountItems), true, responseDiscounts.TimeStamp);
+                dataArrived.DataArrived();
             }
         }
     }

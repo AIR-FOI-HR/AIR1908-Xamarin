@@ -21,18 +21,31 @@ namespace DiscountLocator19.loaders
         {
             base.loadData(dataLoadedListener);
 
-            MyWebServiceCaller storesWs = new MyWebServiceCaller(storesHandler);
-            MyWebServiceCaller discountsWs = new MyWebServiceCaller(discountsHandler);
+            MyWebServiceCaller storesWs = new MyWebServiceCaller(storesHandler, this);
+            MyWebServiceCaller discountsWs = new MyWebServiceCaller(discountsHandler, this);
             Dictionary<string, string> method = new Dictionary<string, string>();
             method.Add("method", "getAll");
             storesWs.getAll(method, typeof(Store));
             discountsWs.getAll(method, typeof(Store));
-
-            MyWebServiceHandler storesHandler = MyWebServiceHandlerFactory.GetHandler<Store>();
-
-            MyWebServiceHandler discountsHandler = MyWebServiceHandlerFactory.GetHandler<Discount>();
-
             
         }
+
+        MyWebServiceHandler storesHandler = MyWebServiceHandlerFactory.GetHandler<Store>();
+
+        MyWebServiceHandler discountsHandler = MyWebServiceHandlerFactory.GetHandler<Discount>();
+
+        public void checkDataArrival()
+        {
+            if (storesHandler.hasDataArrived() && discountsHandler.hasDataArrived())
+            {
+                mDataLoadedListener.onDataLoaded(database.Database.DatabasePath.GetStores().Result, database.Database.DatabasePath.GetDiscounts().Result);
+            }
+        }
+
+        public override void DataArrived()
+        {
+            checkDataArrival();
+        }
+
     }
 }

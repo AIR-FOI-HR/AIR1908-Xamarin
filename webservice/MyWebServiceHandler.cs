@@ -7,5 +7,7 @@ namespace webservice
     public interface MyWebServiceHandler
     {
         void onDataArrived(Object result, bool ok, long timestamp);
+
+        bool hasDataArrived();
     }
 }

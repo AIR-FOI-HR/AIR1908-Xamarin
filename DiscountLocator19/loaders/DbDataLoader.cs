@@ -15,6 +15,10 @@ namespace DiscountLocator19.loaders
 {
     public class DbDataLoader : DataLoader
     {
+        public override void DataArrived()
+        {
+            throw new NotImplementedException();
+        }
         public override void loadData(DataLoadedListener dataLoadedListener)
         {
             base.loadData(dataLoadedListener);

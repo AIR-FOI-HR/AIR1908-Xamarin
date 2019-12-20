@@ -5,7 +5,7 @@ using System.Text;
 
 namespace core
 {
-    public abstract class DataLoader
+    public abstract class DataLoader : IDataArrived
     {
 
         public List<Store> stores;
@@ -24,6 +24,8 @@ namespace core
                 return false;
             return true;
         }
+
+        public abstract void DataArrived();
 
     }
 }

@@ -9,6 +9,11 @@ namespace webservice
     {
         public bool discountsArrived = false;
 
+        public bool hasDataArrived()
+        {
+            return discountsArrived;
+        }
+
         public void onDataArrived(Object result, bool ok, long timestamp)
         {
             if (ok)

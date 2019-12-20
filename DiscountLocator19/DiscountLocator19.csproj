@@ -60,6 +60,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="loaders\DbDataLoader.cs" />
+    <Compile Include="loaders\WsDataLoader.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,9 +107,17 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\core\core.csproj">
+      <Project>{2AEB6515-CCAD-475D-83CD-00968002308E}</Project>
+      <Name>core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{01261cb9-57b1-4752-96d2-dd4e768dd6a4}</Project>
       <Name>database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\webservice\webservice.csproj">
+      <Project>{CAE28467-7002-46E2-A958-CCAC72B47A6B}</Project>
+      <Name>webservice</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

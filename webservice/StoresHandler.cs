@@ -9,6 +9,10 @@ namespace webservice
     {
         public bool storesArrived = false;
 
+        public bool hasDataArrived()
+        {
+            return storesArrived;
+        }
 
         public void onDataArrived(Object result, bool ok, long timestamp)
         {
