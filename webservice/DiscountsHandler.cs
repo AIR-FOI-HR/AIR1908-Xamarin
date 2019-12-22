@@ -35,10 +35,7 @@ namespace webservice
             if (ok)
             {
                 List<Discount> discounts = (List<Discount>)result;
-                foreach (var discount in discounts)
-                {
-                    database.Database.DatabasePath.InsertDiscounts(discount);
-                }
+                
                 discountsArrived = true;
                 popusti = discounts;
             }

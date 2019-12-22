@@ -31,7 +31,7 @@ namespace DiscountLocator19.adapter
             var title = (TitleChild)childObject;
             childViewHolder.name.Text = title.Name;
             childViewHolder.description.Text = title.Description;
-            childViewHolder.value.Text = title.Value.ToString();
+            childViewHolder.value.Text = title.Value.ToString() + "%";
         }
 
         public override void OnBindParentViewHolder(TitleParentViewHolder parentViewHolder, int position, object parentObject)
