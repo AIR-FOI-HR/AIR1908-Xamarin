@@ -13,21 +13,11 @@
         android:orientation="vertical">
  
         
- 
-        <Button
-            android:id="@+id/test_button"
-            android:layout_marginTop="4dp"
+
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Test"/>
-
-
-        <ListView
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/discount_list"
-            android:layout_below="@+id/test_button"/>
+            android:id="@+id/main_recycler"/>
  
 
 

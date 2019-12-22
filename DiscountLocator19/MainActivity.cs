@@ -18,17 +18,9 @@ namespace DiscountLocator19
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, DataLoadedListener
     {
-        Button button;
-        ListView listView;
 
         public void onDataLoaded(List<Store> stores, List<Discount> discounts)
         {
-            var listItems = new List<String>();
-
-            listItems = discounts.Select(d => d.Name).ToList();
-
-            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, listItems);
-            listView.Adapter = listAdapter;
 
         }
 
@@ -39,25 +31,15 @@ namespace DiscountLocator19
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-
-            button = FindViewById<Button>(Resource.Id.test_button);
-            listView = FindViewById<ListView>(Resource.Id.discount_list);
-            button.Click += delegate{ onButtonClick(); };
+            loadData();
         }
 
-        private void onButtonClick()
+        private void loadData()
         {
-            //List<Discount> discounts = Database.DatabasePath.GetDiscounts().Result;
-
-            //List<String> names = discounts.Select(d => d.Name).ToList();
-
-            //ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, names);
-            //listView.Adapter = listAdapter;
-
             DataLoader dataLoader = new WsDataLoader();
             dataLoader.loadData(this);
-
         }
+
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
