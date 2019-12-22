@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountLocator19", "Discou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "database", "..\database\database.csproj", "{01261CB9-57B1-4752-96D2-DD4E768DD6A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webservice", "..\webservice\webservice.csproj", "{CAE28467-7002-46E2-A958-CCAC72B47A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webservice", "..\webservice\webservice.csproj", "{CAE28467-7002-46E2-A958-CCAC72B47A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "..\core\core.csproj", "{2AEB6515-CCAD-475D-83CD-00968002308E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core", "..\core\core.csproj", "{2AEB6515-CCAD-475D-83CD-00968002308E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamDroid.ExpandableRecyclerView", "..\..\Downloads\XamDroid.ExpandableRecyclerView-master\Library\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj", "{402037B7-4C00-4B95-8A54-7338FAD7061D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{2AEB6515-CCAD-475D-83CD-00968002308E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEB6515-CCAD-475D-83CD-00968002308E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEB6515-CCAD-475D-83CD-00968002308E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

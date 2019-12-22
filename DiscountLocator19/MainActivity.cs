@@ -39,7 +39,6 @@ namespace DiscountLocator19
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            mockData();
 
             button = FindViewById<Button>(Resource.Id.test_button);
             listView = FindViewById<ListView>(Resource.Id.discount_list);
@@ -55,7 +54,7 @@ namespace DiscountLocator19
             //ArrayAdapter listAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, names);
             //listView.Adapter = listAdapter;
 
-            DataLoader dataLoader = new DbDataLoader();
+            DataLoader dataLoader = new WsDataLoader();
             dataLoader.loadData(this);
 
         }
