@@ -208,6 +208,19 @@ namespace DiscountLocator19
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::DiscountLocator19.Resource.Styleable.GradientColorItem;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::DiscountLocator19.Resource.Styleable.GradientColorItem_android_color;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::DiscountLocator19.Resource.Styleable.GradientColorItem_android_offset;
+			global::XamDroid.ExpandableRecyclerView.Resource.Attribute.layoutManager = global::DiscountLocator19.Resource.Attribute.layoutManager;
+			global::XamDroid.ExpandableRecyclerView.Resource.Attribute.reverseLayout = global::DiscountLocator19.Resource.Attribute.reverseLayout;
+			global::XamDroid.ExpandableRecyclerView.Resource.Attribute.spanCount = global::DiscountLocator19.Resource.Attribute.spanCount;
+			global::XamDroid.ExpandableRecyclerView.Resource.Attribute.stackFromEnd = global::DiscountLocator19.Resource.Attribute.stackFromEnd;
+			global::XamDroid.ExpandableRecyclerView.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::DiscountLocator19.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::XamDroid.ExpandableRecyclerView.Resource.Id.item_touch_helper_previous_elevation = global::DiscountLocator19.Resource.Id.item_touch_helper_previous_elevation;
+			global::XamDroid.ExpandableRecyclerView.Resource.String.library_name = global::DiscountLocator19.Resource.String.library_name;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView = global::DiscountLocator19.Resource.Styleable.RecyclerView;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView_android_orientation = global::DiscountLocator19.Resource.Styleable.RecyclerView_android_orientation;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView_layoutManager = global::DiscountLocator19.Resource.Styleable.RecyclerView_layoutManager;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView_reverseLayout = global::DiscountLocator19.Resource.Styleable.RecyclerView_reverseLayout;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView_spanCount = global::DiscountLocator19.Resource.Styleable.RecyclerView_spanCount;
+			global::XamDroid.ExpandableRecyclerView.Resource.Styleable.RecyclerView_stackFromEnd = global::DiscountLocator19.Resource.Styleable.RecyclerView_stackFromEnd;
 		}
 		
 		public partial class Animation
@@ -4330,37 +4343,40 @@ namespace DiscountLocator19
 			public const int hide_bottom_view_on_scroll_behavior = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int mtrl_chip_close_icon_content_description = 2131558451;
+			public const int library_name = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int password_toggle_content_description = 2131558452;
+			public const int mtrl_chip_close_icon_content_description = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int path_password_eye = 2131558453;
+			public const int password_toggle_content_description = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int path_password_eye_mask_strike_through = 2131558454;
+			public const int path_password_eye = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int path_password_eye_mask_visible = 2131558455;
+			public const int path_password_eye_mask_strike_through = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int path_password_strike_through = 2131558456;
+			public const int path_password_eye_mask_visible = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int search_menu_title = 2131558457;
+			public const int path_password_strike_through = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int status_bar_notification_info_overflow = 2131558458;
+			public const int search_menu_title = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int store_desc = 2131558459;
+			public const int status_bar_notification_info_overflow = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int store_image = 2131558460;
+			public const int store_desc = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
-			public const int store_name = 2131558461;
+			public const int store_image = 2131558461;
+			
+			// aapt resource value: 0x7F0D003E
+			public const int store_name = 2131558462;
 			
 			static String()
 			{
