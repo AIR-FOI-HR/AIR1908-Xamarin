@@ -36,6 +36,11 @@ namespace webservice
             {
                 List<Store> stores = (List<Store>)result;
 
+                foreach (var store in stores)
+                {
+                    database.Database.DatabasePath.InsertStores(store);
+                }
+
                 storesArrived = true;
                 ducani = stores;
             }
