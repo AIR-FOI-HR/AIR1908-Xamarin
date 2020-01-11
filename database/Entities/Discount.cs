@@ -8,7 +8,7 @@ namespace database.Entities
 {
     public class Discount
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int ID { get; set; }
 
         [ForeignKey(typeof(Store))]

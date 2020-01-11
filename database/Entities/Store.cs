@@ -7,7 +7,7 @@ namespace database.Entities
 {
     public class Store
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int ID { get; set; }
 
         public string Name { get; set; }

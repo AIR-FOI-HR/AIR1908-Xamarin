@@ -40,5 +40,11 @@ namespace database
         {
             return _database.QueryAsync<Discount>("SELECT * FROM Discount WHERE storeId = " + storeID);
         }
+
+        public Task<List<Discount>> GetDiscountById(int discountID)
+        {
+            return _database.QueryAsync<Discount>("SELECT * FROM Discount WHERE ID = " + discountID);
+        }
+
     }
 }
