@@ -47,6 +47,12 @@
                 android:layout_weight="0.29"
                 android:gravity="center"/>
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/discount_id"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
 
         </LinearLayout>
 
