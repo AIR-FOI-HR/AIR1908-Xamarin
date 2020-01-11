@@ -53,7 +53,7 @@ namespace DiscountLocator19
 
                 foreach (var discount in discountsByStoreID)
                 {
-                    childList.Add(new TitleChild(discount.Name, discount.Description, discount.discount));
+                    childList.Add(new TitleChild(discount.ID, discount.Name, discount.Description, discount.discount));
                 }
 
                 title.ChildObjectList = childList;
