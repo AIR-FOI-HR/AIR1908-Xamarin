@@ -9,5 +9,21 @@
     <string name="discount_name">Discount name</string>
     <string name="discount_desc">Discount description</string>
     <string name="discout_value">20%</string>
+
+    <string name="preferences">Preferences</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="user_header">User settings</string>
+    <string name="app_header">Application settings</string>
+
+    <!-- Users Preferences -->
+    <string name="username_title">Username</string>
+
+    <!-- Apps Preferences -->
+    <string name="sync_title">Sync data on app startup</string>
+    <string name="sync_summary">If enabled the data in local database will be synced with webservice data on app startup</string>
+    <string name="language_title">Choose language</string>
+    <string name="webservice_title">Load data from webservice by default</string>
   
 </resources>

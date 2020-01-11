@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<android.support.v7.preference.PreferenceScreen
+                  xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <android.support.v7.preference.PreferenceCategory app:title="@string/user_header">
+
+    <android.support.v7.preference.EditTextPreference
+      app:title="@string/username_title"
+      app:key="username"/>
+
+  </android.support.v7.preference.PreferenceCategory>
+
+  <android.support.v7.preference.PreferenceCategory app:title="@string/app_header">
+
+    <android.support.v7.preference.ListPreference
+      app:title="@string/language_title"
+      app:key="language"
+      app:entryValues="@array/language_values"
+      app:entries="@array/language_entries"
+      app:defaultValue="system"/>
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+      app:title="@string/webservice_title"
+      app:key="webservice"
+      android:disableDependentsState="true"/>
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+      app:title="@string/sync_title"
+      app:key="sync"
+      app:summary="@string/sync_summary"
+      app:dependency="webservice"/>
+
+  </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>
