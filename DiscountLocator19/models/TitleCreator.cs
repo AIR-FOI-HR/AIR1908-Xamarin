@@ -37,10 +37,9 @@ namespace DiscountLocator19.models
 
         public static TitleCreator Get(List<Store> stores)
         {
-            if (_titleCreator == null)
-            {
-                _titleCreator = new TitleCreator(stores);
-            }
+
+            _titleCreator = new TitleCreator(stores);
+
             return _titleCreator;
         }
 

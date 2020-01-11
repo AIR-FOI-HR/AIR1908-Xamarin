@@ -46,5 +46,25 @@ namespace database
             return _database.QueryAsync<Discount>("SELECT * FROM Discount WHERE ID = " + discountID);
         }
 
+        public Task<int> DeleteDiscount(Discount discount)
+        {
+            return _database.DeleteAsync(discount);
+        }
+
+        public Task<int> DeleteStore(Store store)
+        {
+            return _database.DeleteAsync(store);
+        }
+
+        public Task<List<Discount>> GetAllDiscountsByStoreId(int storeID)
+        {
+            return _database.QueryAsync<Discount>("SELECT * FROM Discount WHERE storeId = " + storeID);
+        }
+
+        public Task<List<Store>> GetStoreById(int storeID)
+        {
+            return _database.QueryAsync<Store>("SELECT * FROM Store WHERE ID = " + storeID);
+        }
+
     }
 }

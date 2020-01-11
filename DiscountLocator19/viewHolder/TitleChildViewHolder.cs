@@ -31,6 +31,39 @@ namespace DiscountLocator19.viewHolder
                 Application.Context.StartActivity(intent);
             };
 
+            itemView.LongClick += delegate
+            {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(itemView.Context);
+                alertDialog.SetTitle("Do you wish to remove the selected item?");
+
+                alertDialog.SetNegativeButton("No", delegate
+                {
+                    alertDialog.Dispose();
+                });
+
+                alertDialog.SetPositiveButton("Yes", delegate
+                {
+                    var selectedDiscount = database.Database.DatabasePath.GetDiscountById(Int32.Parse(id.Text)).Result;
+                    database.Database.DatabasePath.DeleteDiscount(selectedDiscount[0]);
+
+                    int discountCount = (database.Database.DatabasePath.GetAllDiscountsByStoreId(selectedDiscount[0].storeId).Result).Count;
+
+                    if (discountCount == 0)
+                    {
+                        var store = database.Database.DatabasePath.GetStoreById(selectedDiscount[0].storeId).Result;
+                        database.Database.DatabasePath.DeleteStore(store[0]);
+                    }
+
+
+                    var intent = new Intent(Application.Context, typeof(MainActivity));
+                    Application.Context.StartActivity(intent);
+
+
+                });
+
+                alertDialog.Show();
+
+            };
         }
     }
 }
