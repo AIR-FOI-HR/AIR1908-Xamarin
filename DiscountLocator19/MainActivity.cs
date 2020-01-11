@@ -17,11 +17,12 @@ using DiscountLocator19.adapter;
 using XamDroid.ExpandableRecyclerView;
 using DiscountLocator19.models;
 using System.Threading;
+using Android.Content;
 
 namespace DiscountLocator19
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, DataLoadedListener
+    public class MainActivity : AppCompatActivity, DataLoadedListener, ISharedPreferencesOnSharedPreferenceChangeListener
     {
 
         RecyclerView myRecyclerView;
@@ -110,6 +111,29 @@ namespace DiscountLocator19
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.main_menu, menu);
+            return base.OnPrepareOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.nekepreference:
+                    var intent = new Intent(Application.Context, typeof(SettingsActivity));
+                    Application.Context.StartActivity(intent);
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
+        public void OnSharedPreferenceChanged(ISharedPreferences sharedPreferences, string key)
+        {
+            throw new NotImplementedException();
         }
     }
 }
