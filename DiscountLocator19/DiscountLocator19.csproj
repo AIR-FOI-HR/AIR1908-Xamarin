@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adapter\MyExpandableRecyclerViewAdapter.cs" />
+    <Compile Include="DiscountDetailsActivity.cs" />
     <Compile Include="loaders\DbDataLoader.cs" />
     <Compile Include="loaders\WsDataLoader.cs" />
     <Compile Include="MainActivity.cs" />
@@ -157,6 +158,14 @@
     <AndroidResource Include="Resources\layout\discount_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_discount_details.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -16,6 +16,7 @@ using Android.Support.V7.Widget;
 using DiscountLocator19.adapter;
 using XamDroid.ExpandableRecyclerView;
 using DiscountLocator19.models;
+using System.Threading;
 
 namespace DiscountLocator19
 {
@@ -83,13 +84,24 @@ namespace DiscountLocator19
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            LoadData();
-        }
+            if (Database.DatabasePath.GetStores().Result.Count == 0)
+            {
+                Android.App.AlertDialog.Builder alertDialog = new Android.App.AlertDialog.Builder(context: this);
+                alertDialog.SetTitle("DB is empty. Data will be retrieved from a WS.");
 
-        private void LoadData()
-        {
-            DataLoader dataLoader = new WsDataLoader();
-            dataLoader.loadData(this);
+                alertDialog.SetNeutralButton("OK", delegate
+                {
+                    DataLoader dataLoader = new WsDataLoader();
+                    dataLoader.loadData(this);
+                });
+
+                alertDialog.Show();
+            }
+            else 
+            {
+                DataLoader dataLoader = new DbDataLoader();
+                dataLoader.loadData(this);
+            }
         }
 
 
