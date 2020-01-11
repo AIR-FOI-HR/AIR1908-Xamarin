@@ -18,6 +18,8 @@ using XamDroid.ExpandableRecyclerView;
 using DiscountLocator19.models;
 using System.Threading;
 using Android.Content;
+using DiscountLocator19.helpers;
+using Android.Preferences;
 
 namespace DiscountLocator19
 {
@@ -26,6 +28,7 @@ namespace DiscountLocator19
     {
 
         RecyclerView myRecyclerView;
+        private Util util = new Util();
 
         public void onDataLoaded(List<Store> stores, List<Discount> discounts)
         {
@@ -78,12 +81,16 @@ namespace DiscountLocator19
             return discountsByStoreID;
         }
 
+        [Obsolete]
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            util.setLanguage(this);
+            PreferenceManager.GetDefaultSharedPreferences(this).RegisterOnSharedPreferenceChangeListener(this);
 
             if (Database.DatabasePath.GetStores().Result.Count == 0)
             {
@@ -131,9 +138,17 @@ namespace DiscountLocator19
             return base.OnOptionsItemSelected(item);
         }
 
+        [Obsolete]
         public void OnSharedPreferenceChanged(ISharedPreferences sharedPreferences, string key)
         {
-            throw new NotImplementedException();
+            switch (key)
+            {
+                case "language":
+                    Util util = new Util();
+                    util.setLanguage(this);
+                    Recreate();
+                    break;
+            }
         }
     }
 }
