@@ -26,9 +26,7 @@ namespace DiscountLocator19.viewHolder
 
             itemView.Click += delegate
             {
-                var intent = new Intent(Application.Context, typeof(DiscountDetailsActivity));
-                intent.PutExtra("discountId", Int32.Parse(id.Text));
-                Application.Context.StartActivity(intent);
+                
             };
 
             itemView.LongClick += delegate
