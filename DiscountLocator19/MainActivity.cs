@@ -20,66 +20,15 @@ using System.Threading;
 using Android.Content;
 using DiscountLocator19.helpers;
 using Android.Preferences;
+using DiscountLocator19.fragments;
 
 namespace DiscountLocator19
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, DataLoadedListener, ISharedPreferencesOnSharedPreferenceChangeListener
+    public class MainActivity : AppCompatActivity, ISharedPreferencesOnSharedPreferenceChangeListener
     {
-
-        RecyclerView myRecyclerView;
-        private Util util = new Util();
-
-        public void onDataLoaded(List<Store> stores, List<Discount> discounts)
-        {
-            myRecyclerView = FindViewById<RecyclerView>(Resource.Id.main_recycler);
-            myRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
-            var adapter = new MyExpandableRecyclerViewAdapter(this, InitData(stores, discounts));
-            adapter.SetParentClickableViewAnimationDefaultDuration();
-            adapter.ParentAndIconExpandOnClick = true;
-
-            myRecyclerView.SetAdapter(adapter);
-        }
-
-        private List<IParentObject> InitData(List<Store> stores, List<Discount> discounts)
-        {
-            var titleCreator = TitleCreator.Get(stores);
-            var titles = titleCreator.GetAll;
-            var parentObject = new List<IParentObject>();
-            int counter = 0;
-
-            foreach (var title in titles)
-            {
-
-                var childList = new List<Object>();
-                var store = stores[counter];
-                List<Discount> discountsByStoreID = GetDiscountsByStoreID(store, discounts);
-
-                foreach (var discount in discountsByStoreID)
-                {
-                    childList.Add(new TitleChild(discount.ID, discount.Name, discount.Description, discount.discount));
-                }
-
-                title.ChildObjectList = childList;
-                parentObject.Add(title);
-                counter++;
-            }
-            return parentObject;
-        }
-
-        private List<Discount> GetDiscountsByStoreID(Store store, List<Discount> discounts)
-        {
-            var discountsByStoreID = new List<Discount>();
-
-            foreach (var discount in discounts)
-            {
-                if (store.ID == discount.storeId)
-                {
-                    discountsByStoreID.Add(discount);
-                }
-            }
-            return discountsByStoreID;
-        }
+       
+        private Util util = new Util();    
 
         [Obsolete]
         protected override void OnCreate(Bundle savedInstanceState)
@@ -92,26 +41,15 @@ namespace DiscountLocator19
             util.setLanguage(this);
             PreferenceManager.GetDefaultSharedPreferences(this).RegisterOnSharedPreferenceChangeListener(this);
 
-            if (Database.DatabasePath.GetStores().Result.Count == 0)
-            {
-                Android.App.AlertDialog.Builder alertDialog = new Android.App.AlertDialog.Builder(context: this);
-                alertDialog.SetTitle("DB is empty. Data will be retrieved from a WS.");
+            showMainFragment();
 
-                alertDialog.SetNeutralButton("OK", delegate
-                {
-                    DataLoader dataLoader = new WsDataLoader();
-                    dataLoader.loadData(this);
-                });
-
-                alertDialog.Show();
-            }
-            else 
-            {
-                DataLoader dataLoader = new DbDataLoader();
-                dataLoader.loadData(this);
-            }
         }
 
+        [Obsolete]
+        private void showMainFragment()
+        {
+            FragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, new ListViewFragment()).Commit();
+        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
