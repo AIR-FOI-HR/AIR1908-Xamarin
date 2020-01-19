@@ -17,16 +17,12 @@ namespace DiscountLocator19.fragments
     public class DiscountDetailsFragment : Fragment
     {
 
-        [BindView(Resource.Id.discount_details_name)]
         TextView txtName;
 
-        [BindView(Resource.Id.discount_details_description)]
         TextView txtDescription;
 
-        [BindView(Resource.Id.discount_details_start)]
         TextView txtStartDate;
 
-        [BindView(Resource.Id.discount_details_end)]
         TextView txtEndDate;
 
         public override void OnCreate(Bundle savedInstanceState)
@@ -39,7 +35,14 @@ namespace DiscountLocator19.fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            return inflater.Inflate(Resource.Layout.fragment_discount_details, container, false);
+            //return inflater.Inflate(Resource.Layout.fragment_discount_details, container, false);
+
+            var view = inflater.Inflate(Resource.Layout.fragment_discount_details, null);
+            txtName = view.FindViewById<TextView>(Resource.Id.discount_details_name);
+            txtDescription = view.FindViewById<TextView>(Resource.Id.discount_details_description);
+            txtStartDate = view.FindViewById<TextView>(Resource.Id.discount_details_start);
+            txtEndDate = view.FindViewById<TextView>(Resource.Id.discount_details_end);
+            return view;
 
             //return base.OnCreateView(inflater, container, savedInstanceState);
         }
@@ -47,7 +50,6 @@ namespace DiscountLocator19.fragments
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
-            Cheeseknife.Bind(this.Activity);
             ShowDiscountDetails();
         }
 

@@ -28,8 +28,6 @@ namespace DiscountLocator19.fragments
     public class ListViewFragment : Fragment, DataLoadedListener
     {
 
-        AppCompatActivity nuovo = new AppCompatActivity();
-
         RecyclerView myRecyclerView;
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)

@@ -36,6 +36,7 @@ namespace DiscountLocator19
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
+            CurrentActivity.setActivity(this);
             SetContentView(Resource.Layout.activity_main);
 
             util.setLanguage(this);

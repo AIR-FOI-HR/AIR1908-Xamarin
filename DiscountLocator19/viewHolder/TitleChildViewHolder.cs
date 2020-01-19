@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using core;
+using DiscountLocator19.fragments;
 using XamDroid.ExpandableRecyclerView;
 
 namespace DiscountLocator19.viewHolder
@@ -17,6 +19,7 @@ namespace DiscountLocator19.viewHolder
     {
         public TextView name, description, value, id;
 
+        [Obsolete]
         public TitleChildViewHolder(View itemView) : base(itemView)
         {
             name = itemView.FindViewById<TextView>(Resource.Id.discount_name);
@@ -26,7 +29,8 @@ namespace DiscountLocator19.viewHolder
 
             itemView.Click += delegate
             {
-                
+                Toast.MakeText(itemView.Context, name.Text, ToastLength.Short).Show();
+                ShowDetailsFragment();
             };
 
             itemView.LongClick += delegate
@@ -62,6 +66,17 @@ namespace DiscountLocator19.viewHolder
                 alertDialog.Show();
 
             };
+        }
+
+        [Obsolete]
+        private void ShowDetailsFragment()
+        {
+            Bundle bundle = new Bundle();
+            bundle.PutInt("discountId", Int32.Parse(id.Text));
+            DiscountDetailsFragment discountDetailsFragment = new DiscountDetailsFragment();
+            discountDetailsFragment.Arguments = bundle;
+
+            CurrentActivity.getActivity().FragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, discountDetailsFragment).AddToBackStack("").Commit();
         }
     }
 }
