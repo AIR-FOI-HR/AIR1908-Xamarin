@@ -21,14 +21,21 @@ using Android.Content;
 using DiscountLocator19.helpers;
 using Android.Preferences;
 using DiscountLocator19.fragments;
+using Android.Support.Design.Widget;
+using Android.Support.V4.Widget;
 
 namespace DiscountLocator19
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, ISharedPreferencesOnSharedPreferenceChangeListener
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    public class MainActivity : AppCompatActivity, ISharedPreferencesOnSharedPreferenceChangeListener, NavigationView.IOnNavigationItemSelectedListener
     {
-       
-        private Util util = new Util();    
+        private Util util = new Util();
+
+        Android.Support.V7.Widget.Toolbar toolbar;
+        DrawerLayout drawerLayout;
+        ActionBarDrawerToggle drawerToggle;
+        NavigationView navigationView;
+
 
         [Obsolete]
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,7 +49,23 @@ namespace DiscountLocator19
             util.setLanguage(this);
             PreferenceManager.GetDefaultSharedPreferences(this).RegisterOnSharedPreferenceChangeListener(this);
 
+            initializeLayout();
             showMainFragment();
+
+        }
+
+        private void initializeLayout()
+        {
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+            drawerLayout.AddDrawerListener(drawerToggle);
+            drawerToggle.SyncState();
+
+            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.SetNavigationItemSelectedListener(this);
 
         }
 
@@ -88,6 +111,17 @@ namespace DiscountLocator19
                     Recreate();
                     break;
             }
+        }
+
+        public bool OnNavigationItemSelected(IMenuItem menuItem)
+        {
+            switch(menuItem.ItemId)
+            {
+                // handle cases
+            }
+
+            drawerLayout.CloseDrawer(Android.Support.V4.View.GravityCompat.Start);
+            return true;
         }
     }
 }

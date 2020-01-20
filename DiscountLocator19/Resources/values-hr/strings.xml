@@ -24,4 +24,16 @@
   <string name="sync_summary">Ako je uključena ova opcija, podaci u lokalnoj bazi će se automatski sinkronizirati s podacima na web servisu pri pokretanju aplikacije.</string>
   <string name="language_title">Izaberi jezik</string>
   <string name="webservice_title">Automatski koristi podatke s web servisa</string>
+
+  <!-- Navigation drawer -->
+  <string name="navigation_drawer_open">Open drawer</string>
+  <string name="navigation_drawer_close">Close drawer</string>
+  
+  <string name="nav_header_title">Discount Locator</string>
+  <string name="nav_header_info">foi@foi.hr</string>
+  
+  <string name="menu_list">Prikaz u listi</string>
+  <string name="menu_map">Prikaz na mapi</string>
+  <string name="menu_about">O aplikaciji</string>
+  <string name="additional">Dodatno</string>
 </resources>

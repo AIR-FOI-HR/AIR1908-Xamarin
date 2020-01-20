@@ -25,5 +25,17 @@
     <string name="sync_summary">If enabled the data in local database will be synced with webservice data on app startup</string>
     <string name="language_title">Choose language</string>
     <string name="webservice_title">Load data from webservice by default</string>
+
+  <!-- Navigation drawer -->
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+
+    <string name="nav_header_title">Discount Locator</string>
+    <string name="nav_header_info">foi@foi.hr</string>
+
+    <string name="menu_list">List view</string>
+    <string name="menu_map">Map view</string>
+    <string name="menu_about">About App</string>
+    <string name="additional">Additional</string>
   
 </resources>
