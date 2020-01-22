@@ -32,6 +32,9 @@ namespace DiscountLocator19.fragments
         private List<Store> stores;
         private List<Discount> discounts;
 
+        private bool moduleReadyFlag = false;
+        private bool dataReadyFlag = false;
+
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
@@ -47,6 +50,9 @@ namespace DiscountLocator19.fragments
                 {
                     DataLoader dataLoader = new WsDataLoader();
                     dataLoader.loadData(this);
+
+                    dataReadyFlag = true;
+                    tryToDisplayData();
                 });
 
                 alertDialog.Show();
@@ -55,6 +61,9 @@ namespace DiscountLocator19.fragments
             {
                 DataLoader dataLoader = new DbDataLoader();
                 dataLoader.loadData(this);
+
+                dataReadyFlag = true;
+                tryToDisplayData();
             }
         }
 
@@ -145,6 +154,20 @@ namespace DiscountLocator19.fragments
         {
             this.stores = stores;
             this.discounts = discounts;
+
+            dataReadyFlag = true;
+            tryToDisplayData();
+        }
+
+        private void tryToDisplayData()
+        {
+            if (moduleReadyFlag && dataReadyFlag)
+                displayData();
+        }
+
+        private void displayData()
+        {
+            
         }
     }
 }
