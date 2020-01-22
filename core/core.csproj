@@ -8,10 +8,4 @@
     <ProjectReference Include="..\database\database.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
-      <HintPath>..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.android.support.v7.appcompat\28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

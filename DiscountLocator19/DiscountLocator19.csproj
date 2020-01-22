@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adapter\MyExpandableRecyclerViewAdapter.cs" />
+    <Compile Include="CurrentActivity.cs" />
     <Compile Include="fragments\DiscountDetailsFragment.cs" />
     <Compile Include="fragments\ListViewFragment.cs" />
     <Compile Include="helpers\Util.cs" />
@@ -144,8 +145,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Desktop\XamDroid.ExpandableRecyclerView-master\XamDroid.ExpandableRecyclerView-master\Library\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj">
-      <Project>{402037b7-4c00-4b95-8a54-7338fad7061d}</Project>
+    <ProjectReference Include="..\..\..\expendables\XamDroid.ExpandableRecyclerView\Library\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj">
+      <Project>{402037B7-4C00-4B95-8A54-7338FAD7061D}</Project>
       <Name>XamDroid.ExpandableRecyclerView</Name>
     </ProjectReference>
     <ProjectReference Include="..\core\core.csproj">
