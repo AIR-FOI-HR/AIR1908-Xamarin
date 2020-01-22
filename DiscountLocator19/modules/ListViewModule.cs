@@ -25,7 +25,7 @@ namespace DiscountLocator19.fragments
 {
 
     [Obsolete]
-    public class ListViewFragment : Fragment, DataLoadedListener
+    public class ListViewModule : Fragment, DataLoadedListener
     {
 
         RecyclerView myRecyclerView;

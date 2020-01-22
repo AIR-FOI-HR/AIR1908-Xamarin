@@ -72,7 +72,7 @@ namespace DiscountLocator19
         [Obsolete]
         private void showMainFragment()
         {
-            FragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, new ListViewFragment()).Commit();
+            FragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, new ListViewModule()).Commit();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
