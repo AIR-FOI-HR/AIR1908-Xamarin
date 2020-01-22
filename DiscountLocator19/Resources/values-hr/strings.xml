@@ -36,4 +36,5 @@
   <string name="menu_map">Prikaz na mapi</string>
   <string name="menu_about">O aplikaciji</string>
   <string name="additional">Dodatno</string>
+  <string name="list_view">Prikaz u listi</string>
 </resources>

@@ -37,5 +37,6 @@
     <string name="menu_map">Map view</string>
     <string name="menu_about">About App</string>
     <string name="additional">Additional</string>
+    <string name="list_view">List view</string>
   
 </resources>

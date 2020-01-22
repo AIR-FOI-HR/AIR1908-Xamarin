@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -25,10 +26,11 @@ namespace DiscountLocator19.fragments
 {
 
     [Obsolete]
-    public class ListViewModule : Fragment, DataLoadedListener
+    public class ListViewModule : Fragment, DataLoadedListener, DataPresenter
     {
-
         RecyclerView myRecyclerView;
+        private List<Store> stores;
+        private List<Discount> discounts;
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
@@ -54,17 +56,12 @@ namespace DiscountLocator19.fragments
                 DataLoader dataLoader = new DbDataLoader();
                 dataLoader.loadData(this);
             }
-            
         }
-
-
 
         public override void OnCreate(Bundle savedInstanceState)
         {
-
             base.OnCreate(savedInstanceState);
             Cheeseknife.Bind(this.Activity);
-            
         }
 
 
@@ -129,5 +126,25 @@ namespace DiscountLocator19.fragments
             return discountsByStoreID;
         }
 
+        public Drawable getIcon(Context context)
+        {
+            return context.GetDrawable(Android.Resource.Drawable.IcMenuAgenda);
+        }
+
+        public string getName(Context context)
+        {
+            return context.GetString(Resource.String.list_view);
+        }
+
+        public Fragment getFragment()
+        {
+            return this;
+        }
+
+        public void setData(List<Store> stores, List<Discount> discounts)
+        {
+            this.stores = stores;
+            this.discounts = discounts;
+        }
     }
 }
