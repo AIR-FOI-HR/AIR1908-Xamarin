@@ -26,7 +26,7 @@ namespace DiscountLocator19.fragments
 {
 
     [Obsolete]
-    public class ListViewModule : Fragment, DataLoadedListener, DataPresenter
+    public class ListViewModule : Fragment, DataPresenter
     {
         RecyclerView myRecyclerView;
         private List<Store> stores;
@@ -48,8 +48,8 @@ namespace DiscountLocator19.fragments
 
                 alertDialog.SetNeutralButton("OK", delegate
                 {
-                    DataLoader dataLoader = new WsDataLoader();
-                    dataLoader.loadData(this);
+                    //DataLoader dataLoader = new WsDataLoader();
+                    //dataLoader.loadData(this);
 
                     dataReadyFlag = true;
                     tryToDisplayData();
@@ -59,8 +59,8 @@ namespace DiscountLocator19.fragments
             }
             else
             {
-                DataLoader dataLoader = new DbDataLoader();
-                dataLoader.loadData(this);
+                //DataLoader dataLoader = new DbDataLoader();
+                //dataLoader.loadData(this);
 
                 dataReadyFlag = true;
                 tryToDisplayData();
@@ -83,17 +83,6 @@ namespace DiscountLocator19.fragments
             //return base.OnCreateView(inflater, container, savedInstanceState);
         }
 
-        public void onDataLoaded(List<Store> stores, List<Discount> discounts)
-        
-        {
-            
-            myRecyclerView.SetLayoutManager(new LinearLayoutManager(this.Activity));
-            var adapter = new MyExpandableRecyclerViewAdapter(this.Activity, InitData(stores, discounts));
-            adapter.SetParentClickableViewAnimationDefaultDuration();
-            adapter.ParentAndIconExpandOnClick = true;
-
-            myRecyclerView.SetAdapter(adapter);
-        }
 
         private List<IParentObject> InitData(List<Store> stores, List<Discount> discounts)
         {
@@ -167,7 +156,12 @@ namespace DiscountLocator19.fragments
 
         private void displayData()
         {
-            
+            myRecyclerView.SetLayoutManager(new LinearLayoutManager(this.Activity));
+            var adapter = new MyExpandableRecyclerViewAdapter(this.Activity, InitData(stores, discounts));
+            adapter.SetParentClickableViewAnimationDefaultDuration();
+            adapter.ParentAndIconExpandOnClick = true;
+
+            myRecyclerView.SetAdapter(adapter);
         }
     }
 }
