@@ -19,10 +19,29 @@ using database.Entities;
 namespace maps
 {
     [Obsolete]
-    public class MapModule : Fragment, IOnMapReadyCallback
+    public class MapModule : Fragment, IOnMapReadyCallback, DataPresenter
     {
         GoogleMap map;
         MapFragment mapFragment;
+
+        private List<Store> stores;
+        private List<Discount> discounts;
+
+        public Fragment getFragment()
+        {
+            return this;
+        }
+
+        public Drawable getIcon(Context context)
+        {
+            return context.GetDrawable(Android.Resource.Drawable.IcMenuMyLocation);
+        }
+
+        public string getName(Context context)
+        {
+            return context.GetString(Resource.String.map_view);
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,6 +67,12 @@ namespace maps
 
             mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
+        }
+
+        public void setData(List<Store> stores, List<Discount> discounts)
+        {
+            this.stores = stores;
+            this.discounts = discounts;
         }
     }
 }

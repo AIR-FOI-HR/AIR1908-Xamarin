@@ -2887,10 +2887,13 @@ namespace maps
 			public static int hello = 2131361851;
 			
 			// aapt resource value: 0x7F0A003C
-			public static int search_menu_title = 2131361852;
+			public static int map_view = 2131361852;
 			
 			// aapt resource value: 0x7F0A003D
-			public static int status_bar_notification_info_overflow = 2131361853;
+			public static int search_menu_title = 2131361853;
+			
+			// aapt resource value: 0x7F0A003E
+			public static int status_bar_notification_info_overflow = 2131361854;
 			
 			static String()
 			{
