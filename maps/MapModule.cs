@@ -19,8 +19,10 @@ using database.Entities;
 namespace maps
 {
     [Obsolete]
-    public class MapModule : Fragment
+    public class MapModule : Fragment, IOnMapReadyCallback
     {
+        GoogleMap map;
+        MapFragment mapFragment;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,10 +37,17 @@ namespace maps
 
         }
 
+        public void OnMapReady(GoogleMap googleMap)
+        {
+            map = googleMap;
+        }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
+
+            mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
+            mapFragment.GetMapAsync(this);
         }
     }
 }
