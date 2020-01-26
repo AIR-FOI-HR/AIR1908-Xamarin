@@ -62,7 +62,7 @@ namespace DiscountLocator19.fragments
                 //DataLoader dataLoader = new DbDataLoader();
                 //dataLoader.loadData(this);
 
-                dataReadyFlag = true;
+                moduleReadyFlag = true;
                 tryToDisplayData();
             }
         }

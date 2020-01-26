@@ -27,6 +27,9 @@ namespace maps
         private List<Store> stores;
         private List<Discount> discounts;
 
+        private bool moduleReadyFlag = false;
+        private bool dataReadyFlag = false;
+
         public Fragment getFragment()
         {
             return this;
@@ -59,6 +62,38 @@ namespace maps
         public void OnMapReady(GoogleMap googleMap)
         {
             map = googleMap;
+
+            moduleReadyFlag = true;
+            tryToDisplayData();
+        }
+
+        private void tryToDisplayData()
+        {
+            if (moduleReadyFlag && dataReadyFlag)
+            {
+                displayData();
+            }
+        }
+
+        private void displayData()
+        {
+            bool cameraReady = false;
+            if (stores != null)
+            {
+                foreach (var store in stores)
+                {
+                    LatLng position = new LatLng(store.Latitude / 1000000.0, store.Longitude / 1000000.0);
+                    map.AddMarker(new MarkerOptions().SetPosition(position).SetTitle(store.Name));
+
+                    if (!cameraReady)
+                    {
+                        map.MoveCamera(CameraUpdateFactory.NewLatLng(position));
+                        map.MoveCamera(CameraUpdateFactory.ZoomTo(12));
+                        cameraReady = true;
+                    }
+                }
+
+            }
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
@@ -73,6 +108,9 @@ namespace maps
         {
             this.stores = stores;
             this.discounts = discounts;
+
+            dataReadyFlag = true;
+            tryToDisplayData();
         }
     }
 }
