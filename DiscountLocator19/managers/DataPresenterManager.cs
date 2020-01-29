@@ -88,5 +88,18 @@ namespace DiscountLocator19.managers
 
             DataLoaderManager.getInstance().sendData(module);
         }
+
+        [Obsolete]
+        internal void selectNavigationItem(IMenuItem menuItem)
+        {
+            if (!menuItem.IsChecked)
+            {
+                menuItem.SetChecked(true);
+                drawerLayout.CloseDrawer(Android.Support.V4.View.GravityCompat.Start);
+
+                DataPresenter module = modules.ElementAt(menuItem.ItemId);
+                startModule(module);
+            }
+        }
     }
 }

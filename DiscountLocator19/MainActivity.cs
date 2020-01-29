@@ -116,11 +116,17 @@ namespace DiscountLocator19
             }
         }
 
+        [Obsolete]
         public bool OnNavigationItemSelected(IMenuItem menuItem)
         {
             switch(menuItem.ItemId)
             {
-                // handle cases
+                case Resource.Id.menu_about:
+                    Toast.MakeText(ApplicationContext, "Discount Locator", ToastLength.Short).Show();
+                    break;
+                default:
+                    DataPresenterManager.getInstance().selectNavigationItem(menuItem);
+                    break;
             }
 
             drawerLayout.CloseDrawer(Android.Support.V4.View.GravityCompat.Start);
