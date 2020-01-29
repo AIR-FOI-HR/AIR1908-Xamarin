@@ -145,12 +145,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\expendables\XamDroid.ExpandableRecyclerView\Library\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj">
-      <Project>{402037B7-4C00-4B95-8A54-7338FAD7061D}</Project>
-      <Name>XamDroid.ExpandableRecyclerView</Name>
-    </ProjectReference>
     <ProjectReference Include="..\core\core.csproj">
-      <Project>{2AEB6515-CCAD-475D-83CD-00968002308E}</Project>
+      <Project>{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}</Project>
       <Name>core</Name>
     </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
@@ -164,6 +160,10 @@
     <ProjectReference Include="..\webservice\webservice.csproj">
       <Project>{CAE28467-7002-46E2-A958-CCAC72B47A6B}</Project>
       <Name>webservice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj">
+      <Project>{402037B7-4C00-4B95-8A54-7338FAD7061D}</Project>
+      <Name>XamDroid.ExpandableRecyclerView</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

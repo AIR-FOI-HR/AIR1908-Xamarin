@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "database", "..\database\dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webservice", "..\webservice\webservice.csproj", "{CAE28467-7002-46E2-A958-CCAC72B47A6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core", "..\core\core.csproj", "{2AEB6515-CCAD-475D-83CD-00968002308E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamDroid.ExpandableRecyclerView", "..\..\..\expendables\XamDroid.ExpandableRecyclerView\Library\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj", "{402037B7-4C00-4B95-8A54-7338FAD7061D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps", "..\maps\maps.csproj", "{D822B1BA-E05F-467E-9CCF-24A58DBC7EFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core", "..\core\core.csproj", "{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamDroid.ExpandableRecyclerView", "..\XamDroid.ExpandableRecyclerView\XamDroid.ExpandableRecyclerView.csproj", "{402037B7-4C00-4B95-8A54-7338FAD7061D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,18 +35,18 @@ Global
 		{CAE28467-7002-46E2-A958-CCAC72B47A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE28467-7002-46E2-A958-CCAC72B47A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE28467-7002-46E2-A958-CCAC72B47A6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AEB6515-CCAD-475D-83CD-00968002308E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AEB6515-CCAD-475D-83CD-00968002308E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AEB6515-CCAD-475D-83CD-00968002308E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AEB6515-CCAD-475D-83CD-00968002308E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D822B1BA-E05F-467E-9CCF-24A58DBC7EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D822B1BA-E05F-467E-9CCF-24A58DBC7EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D822B1BA-E05F-467E-9CCF-24A58DBC7EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D822B1BA-E05F-467E-9CCF-24A58DBC7EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402037B7-4C00-4B95-8A54-7338FAD7061D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

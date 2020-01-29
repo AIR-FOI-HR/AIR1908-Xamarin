@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\core\core.csproj">
-      <Project>{2aeb6515-ccad-475d-83cd-00968002308e}</Project>
+      <Project>{D9E6C0F8-D376-41EF-829B-59D4AFE1A90C}</Project>
       <Name>core</Name>
     </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">

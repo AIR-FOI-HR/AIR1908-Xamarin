@@ -11,9 +11,8 @@ using Android.Views;
 using Android.Widget;
 using DiscountLocator19.models;
 using DiscountLocator19.viewHolder;
-using XamDroid.ExpandableRecyclerView;
-
 using Square.Picasso;
+using XamDroid.ExpandableRecyclerView;
 
 namespace DiscountLocator19.adapter
 {
