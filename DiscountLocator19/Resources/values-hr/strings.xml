@@ -32,8 +32,6 @@
   <string name="nav_header_title">Discount Locator</string>
   <string name="nav_header_info">foi@foi.hr</string>
   
-  <string name="menu_list">Prikaz u listi</string>
-  <string name="menu_map">Prikaz na mapi</string>
   <string name="menu_about">O aplikaciji</string>
   <string name="additional">Dodatno</string>
   <string name="list_view">Prikaz u listi</string>

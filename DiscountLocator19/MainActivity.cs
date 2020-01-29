@@ -23,6 +23,7 @@ using Android.Preferences;
 using DiscountLocator19.fragments;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
+using DiscountLocator19.managers;
 
 namespace DiscountLocator19
 {
@@ -51,7 +52,15 @@ namespace DiscountLocator19
 
             initializeLayout();
             showMainFragment();
+            InitializeDataPresenterManager();
 
+        }
+
+        [Obsolete]
+        private void InitializeDataPresenterManager()
+        {
+            DataPresenterManager dataPresenterManager = DataPresenterManager.getInstance();
+            dataPresenterManager.setDrawerDependencies(this, navigationView, drawerLayout, Resource.Id.dynamic_group);
         }
 
         private void initializeLayout()
