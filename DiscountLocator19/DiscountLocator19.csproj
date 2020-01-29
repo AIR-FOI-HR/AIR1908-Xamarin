@@ -63,6 +63,8 @@
     <Compile Include="adapter\MyExpandableRecyclerViewAdapter.cs" />
     <Compile Include="CurrentActivity.cs" />
     <Compile Include="fragments\DiscountDetailsFragment.cs" />
+    <Compile Include="managers\DataLoaderManager.cs" />
+    <Compile Include="managers\DataPresenterManager.cs" />
     <Compile Include="modules\ListViewModule.cs" />
     <Compile Include="helpers\Util.cs" />
     <Compile Include="loaders\DbDataLoader.cs" />
