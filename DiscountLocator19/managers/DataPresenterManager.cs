@@ -65,5 +65,28 @@ namespace DiscountLocator19.managers
                 navigationView.Menu.Add(dynamicGroupId, i, i + 1, module.getName(activity)).SetIcon(module.getIcon(activity)).SetCheckable(true);
             }
         }
+
+        [Obsolete]
+        internal void startMainModule()
+        {
+            DataPresenter mainModule = modules != null ? modules.ElementAt(0) : null;
+            if (mainModule != null)
+            {
+                startModule(mainModule);
+            }
+        }
+
+        [Obsolete]
+        private void startModule(DataPresenter module)
+        {
+            FragmentManager fragmentManager = activity.FragmentManager;
+
+            if (!activity.IsFinishing && !activity.IsDestroyed)
+            {
+                fragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, module.getFragment()).SetTransition(FragmentTransit.FragmentOpen).Commit();
+            }
+
+            DataLoaderManager.getInstance().sendData(module);
+        }
     }
 }

@@ -48,7 +48,6 @@ namespace DiscountLocator19.fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Cheeseknife.Bind(this.Activity);
         }
 
 

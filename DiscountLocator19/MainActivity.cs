@@ -51,7 +51,6 @@ namespace DiscountLocator19
             PreferenceManager.GetDefaultSharedPreferences(this).RegisterOnSharedPreferenceChangeListener(this);
 
             initializeLayout();
-            showMainFragment();
             InitializeDataPresenterManager();
 
         }
@@ -61,6 +60,7 @@ namespace DiscountLocator19
         {
             DataPresenterManager dataPresenterManager = DataPresenterManager.getInstance();
             dataPresenterManager.setDrawerDependencies(this, navigationView, drawerLayout, Resource.Id.dynamic_group);
+            dataPresenterManager.startMainModule();
         }
 
         private void initializeLayout()
@@ -76,12 +76,6 @@ namespace DiscountLocator19
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-        }
-
-        [Obsolete]
-        private void showMainFragment()
-        {
-            FragmentManager.BeginTransaction().Replace(Resource.Id.main_fragment, new ListViewModule()).Commit();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
