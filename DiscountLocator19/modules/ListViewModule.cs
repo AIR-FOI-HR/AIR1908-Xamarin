@@ -39,32 +39,10 @@ namespace DiscountLocator19.fragments
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            Cheeseknife.Bind(this.Activity);
+            moduleReadyFlag = true;
+            tryToDisplayData();
 
-            if (Database.DatabasePath.GetStores().Result.Count == 0)
-            {
-                Android.App.AlertDialog.Builder alertDialog = new Android.App.AlertDialog.Builder(context: this.Activity);
-                alertDialog.SetTitle("DB is empty. Data will be retrieved from a WS.");
 
-                alertDialog.SetNeutralButton("OK", delegate
-                {
-                    //DataLoader dataLoader = new WsDataLoader();
-                    //dataLoader.loadData(this);
-
-                    dataReadyFlag = true;
-                    tryToDisplayData();
-                });
-
-                alertDialog.Show();
-            }
-            else
-            {
-                //DataLoader dataLoader = new DbDataLoader();
-                //dataLoader.loadData(this);
-
-                moduleReadyFlag = true;
-                tryToDisplayData();
-            }
         }
 
         public override void OnCreate(Bundle savedInstanceState)
