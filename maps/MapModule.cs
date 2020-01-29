@@ -100,7 +100,7 @@ namespace maps
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
+            mapFragment = (MapFragment)ChildFragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
         }
 
