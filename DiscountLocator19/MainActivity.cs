@@ -24,6 +24,7 @@ using DiscountLocator19.fragments;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using DiscountLocator19.managers;
+using Android.Gms.Ads;
 
 namespace DiscountLocator19
 {
@@ -36,6 +37,7 @@ namespace DiscountLocator19
         DrawerLayout drawerLayout;
         ActionBarDrawerToggle drawerToggle;
         NavigationView navigationView;
+        AdView adView;
 
 
         [Obsolete]
@@ -75,6 +77,10 @@ namespace DiscountLocator19
 
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            adView = FindViewById<AdView>(Resource.Id.reklama_banner);
+            var adRequest = new AdRequest.Builder().Build();
+            adView.LoadAd(adRequest);
 
         }
 
@@ -131,6 +137,14 @@ namespace DiscountLocator19
 
             drawerLayout.CloseDrawer(Android.Support.V4.View.GravityCompat.Start);
             return true;
+        }
+        protected override void OnResume()
+        {
+            base.OnResume();
+            if (adView != null)
+            {
+                adView.Resume();
+            }
         }
     }
 }
