@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 
 using DiscountLocator19.fragments;
+using DiscountLocator19.managers;
 using XamDroid.ExpandableRecyclerView;
 
 namespace DiscountLocator19.viewHolder
@@ -35,15 +36,15 @@ namespace DiscountLocator19.viewHolder
 
             itemView.LongClick += delegate
             {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(itemView.Context);
-                alertDialog.SetTitle("Do you wish to remove the selected item?");
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.Instance);
+                alertDialog.SetTitle(Resource.String.alert_dialog_title);
 
-                alertDialog.SetNegativeButton("No", delegate
+                alertDialog.SetNegativeButton(Resource.String.alert_dialog_reject, delegate
                 {
                     alertDialog.Dispose();
                 });
 
-                alertDialog.SetPositiveButton("Yes", delegate
+                alertDialog.SetPositiveButton(Resource.String.alert_dialog_confirm, delegate
                 {
                     var selectedDiscount = database.Database.DatabasePath.GetDiscountById(Int32.Parse(id.Text)).Result;
                     database.Database.DatabasePath.DeleteDiscount(selectedDiscount[0]);
@@ -56,9 +57,8 @@ namespace DiscountLocator19.viewHolder
                         database.Database.DatabasePath.DeleteStore(store[0]);
                     }
 
-
-                    var intent = new Intent(Application.Context, typeof(MainActivity));
-                    Application.Context.StartActivity(intent);
+                    DataPresenterManager dataPresenterManager = DataPresenterManager.getInstance();
+                    dataPresenterManager.startMainModule();
 
 
                 });

@@ -36,8 +36,13 @@
     <string name="menu_about">About App</string>
     <string name="additional">Additional</string>
     <string name="list_view">List view</string>
+  
+    <!-- Alert Dialog -->
+    <string name="alert_dialog_title">Do you wish to remove the selected item?</string>
+    <string name="alert_dialog_confirm">Yes</string>
+    <string name="alert_dialog_reject">No</string>
 
-  <!--AdMob Ad Id-->
-  <string name="ad_mob_id">ca-app-pub-3940256099942544/6300978111</string>
+    <!--AdMob Ad Id-->
+    <string name="ad_mob_id">ca-app-pub-3940256099942544/6300978111</string>
   
 </resources>

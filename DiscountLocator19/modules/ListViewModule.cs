@@ -40,6 +40,7 @@ namespace DiscountLocator19.fragments
             base.OnViewCreated(view, savedInstanceState);
 
             moduleReadyFlag = true;
+
             tryToDisplayData();
 
 
@@ -133,8 +134,8 @@ namespace DiscountLocator19.fragments
 
         private void displayData()
         {
-            myRecyclerView.SetLayoutManager(new LinearLayoutManager(this.Activity));
-            var adapter = new MyExpandableRecyclerViewAdapter(this.Activity, InitData(stores, discounts));
+            myRecyclerView.SetLayoutManager(new LinearLayoutManager(Application.Context));
+            var adapter = new MyExpandableRecyclerViewAdapter(Application.Context, InitData(stores, discounts));
             adapter.SetParentClickableViewAnimationDefaultDuration();
             adapter.ParentAndIconExpandOnClick = true;
 

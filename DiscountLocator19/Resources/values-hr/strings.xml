@@ -35,4 +35,9 @@
   <string name="menu_about">O aplikaciji</string>
   <string name="additional">Dodatno</string>
   <string name="list_view">Prikaz u listi</string>
+
+  <!-- Alert Dialog -->
+  <string name="alert_dialog_title">Želite li obrisati odabrani popust?</string>
+  <string name="alert_dialog_confirm">Da</string>
+  <string name="alert_dialog_reject">Ne</string>
 </resources>

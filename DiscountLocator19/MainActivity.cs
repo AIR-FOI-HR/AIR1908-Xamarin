@@ -39,6 +39,13 @@ namespace DiscountLocator19
         NavigationView navigationView;
         AdView adView;
 
+        public static MainActivity Instance { get; private set; }
+
+        public MainActivity()
+        {
+            Instance = this;
+        }
+
 
         [Obsolete]
         protected override void OnCreate(Bundle savedInstanceState)
