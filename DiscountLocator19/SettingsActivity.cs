@@ -45,6 +45,7 @@ namespace DiscountLocator19
 
             SupportFragmentManager.BeginTransaction().Replace(Resource.Id.settings, new SettingsFragment()).Commit();
 
+            SupportActionBar.SetTitle(Resource.String.title_activity_settings);
             var actionBar = SupportActionBar;
             if (actionBar != null)
             {
